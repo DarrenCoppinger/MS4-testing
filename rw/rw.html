@@ -1,0 +1,228 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<!-- {{ reservation_form.reserved_start_time }} -->
+
+       </div>
+            <div
+            id="dtp_reserved_start_date"
+            name="dtp_reserved_start_date"
+            class="input-append date"
+          >
+            {{ reservation_form.reserved_start_time }}
+
+
+            <span class="add-on">
+              <i
+                class="glyphicon glyphicon-calendar"
+                aria-hidden="true"
+                data-time-icon="icon-time"
+                data-date-icon="icon-calendar"
+              ></i>
+            </span>
+          </div>
+        </div>
+
+                            <!-- <div class="form-group">
+                    {{ reservation_form | as_bootstrap }}
+                    </div> -->
+
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+
+
+    $("#id_reserved_end_date").datetimepicker({
+      format: "MM/dd/yyyy hh:mm",
+      autoclose: true,
+    });
+
+          <div class="form-group">
+        {{reservation_form.reserved_end_time.errors }}
+        <div id="id_reserved_start_date" class="input-append date">
+          <div class="col-sm-2">
+            {{ reservation_form.reserved_end_time }}
+          </div>
+
+          <div class="col-sm-2">
+            <span class="add-on">
+              <i
+                class="glyphicon glyphicon-calendar"
+                aria-hidden="true"
+                data-time-icon="icon-time"
+                data-date-icon="icon-calendar"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 col-md-12">
+            <label for="dtp_reserved_end_date">End Time</label>
+            {{ reservation_form.reserved_end_time.errors }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 col-md-6">
+            <div
+              id="dtp_reserved_end_date"
+              name="dtp_reserved_end_date"
+              class="input-append date"
+            >
+              {{ reservation_form.reserved_end_time }}
+            </div>
+          </div>
+          <div class="col-2 col-md-4">
+            <span class="add-on">
+              <i
+                class="glyphicon glyphicon-calendar"
+                aria-hidden="true"
+                data-time-icon="icon-time"
+                data-date-icon="icon-calendar"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- date -->
+  <div class="form-group">
+    <!-- label -->
+    {{ reservation_form.date.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.date.id_label_tag }}">Date</label
+    >
+    <!-- label -->
+    <div class="col-sm-2">
+      {{ reservation_form.date }}
+    </div>
+  </div>
+  <!-- date -->
+
+
+
+ <!-- start time -->
+  <div class="form-group">
+    <!-- start time label -->
+    {{ reservation_form.reserved_start_time.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.reserved_start_time.id_label_tag }}"
+      >Start Time</label>
+    <!-- start time label -->
+
+    <!-- start time input and calendar -->
+    <div id="dtp_reserved_start_time" class="input-append date">
+      <!-- start time input -->
+      <div class="col-sm-2">
+        {{ reservation_form.reserved_start_time }}
+      </div>
+      <!-- start time input -->
+
+      <!-- start time calendar -->
+      <div class="col-sm-2">
+        <span class="add-on">
+          <i
+            class="glyphicon glyphicon-calendar"
+            aria-hidden="true"
+            data-time-icon="icon-time"
+            data-date-icon="icon-calendar"
+          ></i>
+        </span>
+      </div>
+      <!-- start time calendar -->
+    </div>
+    <!-- start time input and calendar -->
+</div>
+<!-- start time -->
+
+<!-- end time input and calendar -->
+  
+  <div class="form-group">
+    <!-- end time label -->
+    {{ reservation_form.reserved_end_time.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.reserved_end_time.id_label_tag }}"
+      >Reservation end date</label
+    >
+    <!-- end time label -->
+
+    <div id="dtp_reserved_end_time" class="input-append date">
+      <!-- end time input -->
+      <div class="col-sm-2">
+        {{ reservation_form.reserved_end_time }}
+      </div>
+      <!-- end time input -->
+
+      <!-- end time calendar -->
+      <div class="col-sm-2">
+        <span class="add-on">
+          <i
+            class="glyphicon glyphicon-calendar"
+            aria-hidden="true"
+            data-time-icon="icon-time"
+            data-date-icon="icon-calendar"
+          ></i>
+        </span>
+      </div>
+      <!-- end time calendar -->
+    </div>
+    <!-- input and calendar -->
+  </div>
+
+  <!-- end time input and calendar -->
+<script
+  type="text/javascript"
+  src="{% static 'js/bootstrap-datetimepicker.min.js' %}"
+></script>
+
+  <script type="text/javascript">
+  $(function () {
+    $("#dtp_date").datetimepicker({
+      format: "MM/dd/yyyy hh:mm",
+      autoclose: true,
+    });
+    $("#dtp_reserved_start_time").datetimepicker({
+      format: "MM/dd/yyyy hh:mm",
+      autoclose: true,
+    });
+    $("#dtp_reserved_end_time").datetimepicker({
+      format: "MM/dd/yyyy hh:mm",
+      autoclose: true,
+    });
+  });
+</script>
+
+
+# class ReservationForm(forms.ModelForm):
+
+#     def clean(self):
+#         if hasattr(self, 'request'):
+#             if hasattr(self.request, "reservation"):
+#                 raise forms.ValidationError(
+#                     _("You can not create reservation with active reservation"))
+#             cleaned_data = super(ReservationForm, self).clean()
+
+#     class Meta:
+#         model = Reservation
+#         fields = '__all__'
+#         exclude = ['user', 'status']
+
+
+            reservation.date = timezone.now()
+            reservation.reserved_start_time = timezone.now()
+            reservation.reserved_end_time = timezone.now()

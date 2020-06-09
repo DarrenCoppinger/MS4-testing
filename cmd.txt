@@ -1,2 +1,13 @@
 pip3 install django==1.11.29
 django-admin startproject ms4testing .
+
+# create .gitignore file
+
+
+pip3 install django-forms-bootstrap
+
+python3 manage.py startapp products
+
+pip3 install Pillow # needed to upload images
+
+pip3 install stripe # payments

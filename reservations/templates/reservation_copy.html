@@ -1,0 +1,132 @@
+{% extends 'base.html' %} {% load bootstrap_tags %} {% load staticfiles %}
+{% block content %}
+
+<div class="">
+  <h1>Make a Reservation</h1>
+</div>
+
+<form role="form" method="post">
+  {% csrf_token %}
+
+  <!-- seat_type  -->
+  <div class="form-group">
+    <!-- label -->
+    {{ reservation_form.seat_type.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.seat_type.id_label_tag }}"
+      >Seat Type</label>
+    <!-- label -->
+    <div class="col-sm-2">
+      {{ reservation_form.seat_type }}
+    </div>
+  </div>
+  <!-- seat_type -->
+
+  <!-- full_name  -->
+  <div class="form-group">
+    <!-- label -->
+    {{ reservation_form.full_name.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.full_name.id_label_tag }}"
+      >Full Name</label>
+    <!-- label -->
+    <div class="col-sm-2">
+      {{ reservation_form.full_name }}
+    </div>
+  </div>
+  <!-- full_name -->
+
+  <!-- phone_number  -->
+  <div class="form-group">
+    <!-- label -->
+    {{ reservation_form.phone_number.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.phone_number.id_label_tag }}"
+      >Phone Number</label
+    >
+    <!-- label -->
+    <div class="col-sm-2">
+      {{ reservation_form.phone_number }}
+    </div>
+  </div>
+  <!-- phone_number -->
+  <!-- email  -->
+  <div class="form-group">
+    <!-- label -->
+    {{ reservation_form.email.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.email.id_label_tag }}"
+      >Email</label
+    >
+    <!-- label -->
+    <div class="col-sm-2">
+      {{ reservation_form.email }}
+    </div>
+  </div>
+  <!-- email -->
+
+  <!-- date -->
+  <div class="form-group">
+    <!-- date label -->
+    {{ reservation_form.date.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.date.id_label_tag }}"
+      >Date</label>
+    <!-- date label -->
+    <div class="col-sm-2">
+        {{ reservation_form.date }}
+    </div>
+</div>
+<!-- date -->
+
+<!-- reserved_start_time -->
+<div class="form-group">
+    <!-- reserved_start_time label -->
+    {{ reservation_form.reserved_start_time.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.reserved_start_time.id_label_tag }}"
+      >Start Time</label>
+    <!-- reserved_start_time label -->
+    <div class="col-sm-2">
+        {{ reservation_form.reserved_start_time }}
+    </div>
+</div>
+<!-- reserved_start_time -->
+
+
+  <!-- reserved_end_time -->
+  <div class="form-group">
+    <!-- reserved_start_time label -->
+    {{ reservation_form.reserved_end_time.errors }}
+    <label
+      class="col-sm-2 control-label"
+      id="{{ reservation_form.reserved_end_time.id_label_tag }}"
+      >End Time</label>
+    <!-- reserved_start_time label -->
+    <div class="col-sm-2">
+        {{ reservation_form.reserved_end_time }}
+    </div>
+</div>
+<!-- reserved_end_time -->
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <input
+        class="btn btn-primary"
+        id="submit_payment_btn"
+        name="commit"
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </div>
+</form>
+
+
+{% endblock %}
