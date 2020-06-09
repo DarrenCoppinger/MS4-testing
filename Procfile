@@ -1,1 +1,1 @@
-web: gunicorn ecommerce.wsgi:application
+web: gunicorn ms4testing.wsgi:application
