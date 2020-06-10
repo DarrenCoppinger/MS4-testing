@@ -166,6 +166,9 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
+
+# --- Sending Emails ---
+
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

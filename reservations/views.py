@@ -4,6 +4,7 @@ from django.contrib import messages
 from .form import ReservationForm
 from .models import ReservationLineItem
 from django.conf import settings
+from django.core.mail import send_mail
 from django.utils import timezone
 # from products.models import Product
 
@@ -17,7 +18,13 @@ def reservation(request):
             reservation = reservation_form.save(commit=False)
 
             reservation.save()
-            messages.error(
+            #send_mail(subject, message, from_email, to_list, fail_silently=True)
+            subject = "Thank you for requesting a booking at Barstool"
+            message = "Welcome to barstool. We appreciate your business. /n We will be in touch soon!"
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [reservation.email, settings.EMAIL_HOST_USER]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
+            messages.success(
                 request, "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking."
                 )
             return redirect(reverse('index'))
