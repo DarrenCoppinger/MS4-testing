@@ -16,7 +16,6 @@ def reservation(request):
         reservation_form = ReservationForm(request.POST)
         if reservation_form.is_valid():
             reservation = reservation_form.save(commit=False)
-
             reservation.save()
             #send_mail(subject, message, from_email, to_list, fail_silently=True)
             subject = "Thank you for requesting a booking at Barstool"
@@ -33,7 +32,6 @@ def reservation(request):
             messages.error(request, "We were unable to make this reservation")
     else:
         reservation_form = ReservationForm()
-
     return render(
         request,
         "reservation.html",

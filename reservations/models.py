@@ -2,7 +2,6 @@ from django.db import models
 #from django.utils import timezone
 #from django.utils.translation import ugettext_lazy as _
 
-
 # Create your models here.
 class Reservation(models.Model):
     REQUESTED = 1
