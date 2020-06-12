@@ -15,10 +15,18 @@ class ReservationAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         if change:
             print('Inside check loop 1')
-            subject = "Status Changed"
-            message = "Status Changed"
+            print(obj)
+            if(obj.status == 2):
+                subject = "Status Changed - ACCEPTED"
+                message = "Status Changed - ACCEPTED"
+            elif(obj.status == 3):
+                subject = "Status Changed - DENIED"
+                message = "Status Changed - DENIED"
+            # print('request.email ' + str(request.email))
+            # subject = "Status Changed"
+            # message = "Status Changed"
             from_email = settings.EMAIL_HOST_USER
-            to_list = [email, settings.EMAIL_HOST_USER]
+            to_list = [obj.email, settings.EMAIL_HOST_USER]
             send_mail(
                 subject,
                 message,
@@ -30,10 +38,11 @@ class ReservationAdmin(admin.ModelAdmin):
 admin.site.register(Reservation, ReservationAdmin)
 
 
-        # reservation_form = ReservationForm(request.POST)
-        # if reservation_form.is_valid():
-        #     reservation = reservation_form.save(commit=False)
-        #     reservation.save()
+    # reservation_form = ReservationForm(request.POST)
+    # if reservation_form.is_valid():
+    #     reservation = reservation_form.save(commit=False)
+    #     reservation.save()
+
 
     # def save_formset(self, request, form, formset, change):
     #     if change:
