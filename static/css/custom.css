@@ -60,7 +60,7 @@ caption p {
     word-wrap: break-word;
 }
 
-.row.row-flex {
+.row {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -79,3 +79,14 @@ caption p {
 .product-description {
     min-height: 40px;
 }
+
+
+/* ------ Card ------ */
+.card {
+    margin: 15px 0;
+}
+
+.card-text {
+    /* max-height: 5rem; */
+}
+/* ------ Card ------ */
