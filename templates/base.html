@@ -8,10 +8,17 @@
     <title>MS4 Testing</title>
 
     <!-- Bootswatch cdn css -->
-    <link
+    <!-- <link
       href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-b+jboW/YIpW2ZZYyYdXczKK6igHlnkPNfN9kYAbqYV7rNQ9PKTXlS2D6j1QZIATW"
+      crossorigin="anonymous"
+    /> -->
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs"
       crossorigin="anonymous"
     />
 
@@ -61,11 +68,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">
+              <i class="fa fa-home"></i> Home
+            </a>
+          </li>
           {% if user.is_authenticated %}
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="{% url 'profile' %}"
               ><i class="fa fa-user"></i> Profile
               <span class="sr-only">(current)</span></a
+            >
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'products' %}"
+              ><i class="fa fa-glass"></i> Drinks</a
             >
           </li>
           <li class="nav-item">
@@ -98,21 +115,23 @@
             </a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="text"
-            placeholder="Search"
-            name="q"
-          />
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-            Search
-          </button>
+        <form class="form-inline">
+            <div class="input-group">
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    name="q"
+                />
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="submit">Search</button>
+                </div>
+            </div>
         </form>
       </div>
     </nav>
     <!--new navbar -->
-<!-- Messages -->
+    <!-- Messages -->
     {% if messages %}
     <div class="alert alert-success">
       <div class="messages">
@@ -120,7 +139,7 @@
       </div>
     </div>
     {% endif %}
-<!-- Messages -->
+    <!-- Messages -->
     <div class="container">
       {% block content %}{% endblock %}
     </div>

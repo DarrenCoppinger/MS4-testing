@@ -15,18 +15,30 @@
 {% block content %}
 <div class="row row-flex">
     {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+        <!-- <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                <img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
 
                 <div class="caption">
                     <h3>{{ item.product.name }}</h3>
                     <p class="product-description">{{ item.product.description }}</p>
                     <p>{{ item.quantity }}</p>
-                    <p>item.product.price</p>
+                    <p>{{ item.product.price }}</p>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <div class="card-default col-10 col-offset-1 col-sm-offset-0 col-sm-6 col-md-4 ">
+		<div class="card">
+			<img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">{{ item.product.name }}</h5>
+				<p class="card-text">{{ item.product.description }}</p>
+				<p>{{ item.product.price }}</p>
+			</div>
+		</div>
+	</div>
+
     {% endfor %}
 </div>
 <div class="row">

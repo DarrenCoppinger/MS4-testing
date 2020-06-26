@@ -1,6 +1,9 @@
 *.sqlite3
 __pycache__
 env.py
+x.html
+base_copy.html
+products_copy.html
 *.png
 static/
 media/

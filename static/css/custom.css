@@ -10,6 +10,17 @@ footer {
     color: #A9A9A9;
 }
 
+
+/* --------- navbar --------- */
+
+.nav-link {
+    color: #cab161;
+}
+
+.form-control {
+    height: calc(1.5em + 1.5rem + 3px);
+}
+
 .icon-bar {
     background-color: #fff;
 }
@@ -30,15 +41,45 @@ footer {
 .badge-warning[href] {
     background-color: #c67605;
 }
+/* --------- navbar --------- */
 
-.product {
-    background-size: contain;
+
+/* --------- product card --------- */
+.card {
+    /* background-size: contain;
     background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    background-repeat: no-repeat; */
+    /* width: 250px;
+    height: 250px; */
     margin: 0 auto;
 }
+
+
+.card:hover {
+    -webkit-transition: 0.2s all ease-in-out 0.2s;
+    transition: 0.2s all ease-in-out 0.2s;
+    -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
+}
+
+
+.card-default {
+    border-color: transparent;
+    padding: 0 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.card-body {
+    height: 100%;
+    border: 1px solid #ddd;
+}
+
+.card-text {
+    min-height: 5rem;
+}
+
+
+/* --------- product cards --------- */
 
 .floor-plan {
     background-size: contain;
@@ -60,22 +101,12 @@ caption p {
     word-wrap: break-word;
 }
 
-.row.row-flex {
+.row {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
 }
 
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
-}
-
-.panel-body {
-    height: 100%;
-    border: 1px solid #ddd;
-}
-
-.product-description {
-    min-height: 40px;
-}
+p .badge {
+    min-height: 5rem;
+} 

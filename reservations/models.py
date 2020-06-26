@@ -24,7 +24,7 @@ class Reservation(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     email = models.CharField(max_length=50, blank=False)
-    date = models.DateTimeField()
+    date = models.DateField()
     seat_type = models.SmallIntegerField(choices=TABLE_TYPE, default=STOOL)
     reserved_start_time = models.TimeField()
     reserved_end_time = models.TimeField()
